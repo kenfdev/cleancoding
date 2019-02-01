@@ -18,4 +18,5 @@ func (p *showTodoPresenter) Present(model *ShowTodoResponseModel) {
 	p.viewModel.ID = model.Todo.ID
 	p.viewModel.Title = model.Todo.Title
 	p.viewModel.Description = model.Todo.Description
+	p.viewModel.IsCompleted = model.Todo.IsCompleted
 }

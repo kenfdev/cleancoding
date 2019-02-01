@@ -1,6 +1,9 @@
 package controller
 
 type Context interface {
+	// Bind binds the request body into provided type `i`. The default binder
+	// does it based on Content-Type header.
+	Bind(i interface{}) error
 	// Param returns path parameter by name.
 	Param(name string) string
 	// JSON sends a JSON response with status code.

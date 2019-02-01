@@ -20,8 +20,9 @@ func (p *listTodoPresenter) Present(model *ListTodoResponseModel) {
 	var summaries []*ViewableTodoSummary
 	for _, todo := range model.Todos {
 		summary := &ViewableTodoSummary{
-			ID:    todo.ID,
-			Title: todo.Title,
+			ID:          todo.ID,
+			Title:       todo.Title,
+			IsCompleted: todo.IsCompleted,
 		}
 		summaries = append(summaries, summary)
 	}

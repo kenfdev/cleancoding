@@ -4,8 +4,10 @@ import (
 	"github.com/kenfdev/echo-vue/server/adapter/controller"
 	"github.com/kenfdev/echo-vue/server/adapter/controller/todo"
 	"github.com/kenfdev/echo-vue/server/infrastructure/datastore"
+	"github.com/kenfdev/echo-vue/server/usecase/createtodo"
 	"github.com/kenfdev/echo-vue/server/usecase/listtodo"
 	"github.com/kenfdev/echo-vue/server/usecase/showtodo"
+	"github.com/kenfdev/echo-vue/server/usecase/toggletodo"
 	"github.com/labstack/echo"
 )
 
@@ -25,6 +27,16 @@ func ConfigureRouter(e *echo.Echo) {
 	showTodoPresenter := showtodo.NewShowTodoPresenter()
 	showTodoController := todo.NewShowTodoController(showTodoInteractor, showTodoPresenter)
 
-	e.GET("/todos", passContext(listTodoController.Handle))
-	e.GET("/todos/:id", passContext(showTodoController.Handle))
+	toggleTodoInteractor := toggletodo.NewToggleTodoInteractor(todoGateway)
+	toggleTodoPresenter := toggletodo.NewToggleTodoPresenter()
+	toggleTodoController := todo.NewToggleTodoController(toggleTodoInteractor, toggleTodoPresenter)
+
+	createTodoInteractor := createtodo.NewCreateTodoInteractor(todoGateway)
+	createTodoPresenter := createtodo.NewCreateTodoPresenter()
+	createTodoController := todo.NewCreateTodoController(createTodoInteractor, createTodoPresenter)
+
+	e.GET("/api/todos", passContext(listTodoController.Handle))
+	e.GET("/api/todos/:id", passContext(showTodoController.Handle))
+	e.PUT("/api/todos/:id/complete", passContext(toggleTodoController.Handle))
+	e.POST("/api/todos", passContext(createTodoController.Handle))
 }

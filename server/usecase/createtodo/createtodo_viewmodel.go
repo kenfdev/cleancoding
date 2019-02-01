@@ -1,6 +1,6 @@
-package showtodo
+package createtodo
 
-type showTodoViewModel struct {
+type createTodoViewModel struct {
 	ID          string `json:"id"`
 	Title       string `json:"title"`
 	Description string `json:"description"`

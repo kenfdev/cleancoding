@@ -1,6 +1,6 @@
-package showtodo
+package toggletodo
 
-type showTodoViewModel struct {
+type toggleTodoViewModel struct {
 	ID          string `json:"id"`
 	Title       string `json:"title"`
 	Description string `json:"description"`

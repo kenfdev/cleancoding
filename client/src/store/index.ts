@@ -1,13 +1,15 @@
 import Vue from 'vue';
 import Vuex, { Store } from 'vuex';
+import axios from 'axios';
 import { TodoGateway } from '@/adapter/gateway/todo-gateway';
-import { TodoInMemoryGateway } from '@/infrastructure/api/todo-inmemory-gateway';
+// import { TodoInMemoryGateway } from '@/infrastructure/api/todo-inmemory-gateway';
+
+import * as todosModule from './todos';
+import { TodoHttpGateway } from '@/infrastructure/api/todo-http-gateway';
 
 Vue.use(Vuex);
 
-export interface RootState {
-  msg: string;
-}
+export interface RootState {}
 
 export interface Adapters {
   todoGateway: TodoGateway;
@@ -18,30 +20,20 @@ export interface MyStore extends Store<RootState> {
 }
 
 const store = new Vuex.Store({
-  state: {
-    msg: '',
+  state: {},
+  actions: {},
+  mutations: {},
+  modules: {
+    [todosModule.name]: todosModule,
   },
-  actions: {
-    async msgAction({ commit }, msg) {
-      const promise = new Promise(resolve => {
-        setTimeout(() => {
-          resolve(msg);
-        }, 2500);
-      });
-
-      const result = await promise;
-      commit('setMsg', result);
-    },
-  },
-  mutations: {
-    setMsg(state, msg) {
-      state.msg = msg;
-    },
-  },
+});
+const axiosInstance = axios.create({
+  baseURL: '/api',
 });
 
 (store as any).$adapters = {
-  todoGateway: new TodoInMemoryGateway(),
+  // todoGateway: new TodoInMemoryGateway(),
+  todoGateway: new TodoHttpGateway(axiosInstance),
 } as Adapters;
 
 export default store;
