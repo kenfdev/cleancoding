@@ -1,6 +1,6 @@
 package createtodo
 
-import "github.com/kenfdev/echo-vue/server/adapter/gateway"
+import "github.com/kenfdev/cleancoding/server/adapter/gateway"
 
 type createTodoInteractor struct {
 	todoGateway gateway.TodoGateway

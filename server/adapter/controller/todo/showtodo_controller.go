@@ -3,8 +3,8 @@ package todo
 import (
 	"errors"
 
-	"github.com/kenfdev/echo-vue/server/adapter/controller"
-	"github.com/kenfdev/echo-vue/server/usecase/showtodo"
+	"github.com/kenfdev/cleancoding/server/adapter/controller"
+	"github.com/kenfdev/cleancoding/server/usecase/showtodo"
 )
 
 type showTodoController struct {

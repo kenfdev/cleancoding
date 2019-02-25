@@ -3,8 +3,8 @@ package datastore
 import (
 	"errors"
 
-	"github.com/kenfdev/echo-vue/server/adapter/gateway"
-	"github.com/kenfdev/echo-vue/server/domain"
+	"github.com/kenfdev/cleancoding/server/adapter/gateway"
+	"github.com/kenfdev/cleancoding/server/domain"
 	uuid "github.com/satori/go.uuid"
 )
 

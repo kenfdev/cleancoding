@@ -1,9 +1,9 @@
 package todo
 
 import (
-	"github.com/kenfdev/echo-vue/server/adapter/controller"
-	"github.com/kenfdev/echo-vue/server/domain"
-	"github.com/kenfdev/echo-vue/server/usecase/createtodo"
+	"github.com/kenfdev/cleancoding/server/adapter/controller"
+	"github.com/kenfdev/cleancoding/server/domain"
+	"github.com/kenfdev/cleancoding/server/usecase/createtodo"
 )
 
 type createTodoController struct {

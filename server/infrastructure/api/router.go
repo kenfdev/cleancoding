@@ -1,13 +1,13 @@
 package api
 
 import (
-	"github.com/kenfdev/echo-vue/server/adapter/controller"
-	"github.com/kenfdev/echo-vue/server/adapter/controller/todo"
-	"github.com/kenfdev/echo-vue/server/infrastructure/datastore"
-	"github.com/kenfdev/echo-vue/server/usecase/createtodo"
-	"github.com/kenfdev/echo-vue/server/usecase/listtodo"
-	"github.com/kenfdev/echo-vue/server/usecase/showtodo"
-	"github.com/kenfdev/echo-vue/server/usecase/toggletodo"
+	"github.com/kenfdev/cleancoding/server/adapter/controller"
+	"github.com/kenfdev/cleancoding/server/adapter/controller/todo"
+	"github.com/kenfdev/cleancoding/server/infrastructure/datastore"
+	"github.com/kenfdev/cleancoding/server/usecase/createtodo"
+	"github.com/kenfdev/cleancoding/server/usecase/listtodo"
+	"github.com/kenfdev/cleancoding/server/usecase/showtodo"
+	"github.com/kenfdev/cleancoding/server/usecase/toggletodo"
 	"github.com/labstack/echo"
 )
 

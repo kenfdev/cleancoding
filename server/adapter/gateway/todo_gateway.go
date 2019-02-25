@@ -1,6 +1,6 @@
 package gateway
 
-import "github.com/kenfdev/echo-vue/server/domain"
+import "github.com/kenfdev/cleancoding/server/domain"
 
 type TodoGateway interface {
 	FindAllTodos() ([]*domain.Todo, error)

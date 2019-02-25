@@ -1,8 +1,8 @@
 package todo
 
 import (
-	"github.com/kenfdev/echo-vue/server/adapter/controller"
-	"github.com/kenfdev/echo-vue/server/usecase/listtodo"
+	"github.com/kenfdev/cleancoding/server/adapter/controller"
+	"github.com/kenfdev/cleancoding/server/usecase/listtodo"
 )
 
 type listTodoController struct {

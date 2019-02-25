@@ -1,6 +1,6 @@
 package toggletodo
 
-import "github.com/kenfdev/echo-vue/server/adapter/gateway"
+import "github.com/kenfdev/cleancoding/server/adapter/gateway"
 
 type toggleTodoInteractor struct {
 	todoGateway gateway.TodoGateway

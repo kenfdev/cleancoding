@@ -1,7 +1,7 @@
 package showtodo
 
 import (
-	"github.com/kenfdev/echo-vue/server/domain"
+	"github.com/kenfdev/cleancoding/server/domain"
 )
 
 type ShowTodoRequestModel struct {

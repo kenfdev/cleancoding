@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/kenfdev/echo-vue/server/infrastructure/api"
+	"github.com/kenfdev/cleancoding/server/infrastructure/api"
 	"github.com/labstack/echo"
 )
 
